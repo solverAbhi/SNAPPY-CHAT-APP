@@ -21,7 +21,12 @@ mongoose
   .catch((err) => {
     console.log(err.message);
   });
-
+app.use(cors({
+  origin:[""],
+  methods:["POST","GET"],
+  credentials:true
+  
+} ));
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
